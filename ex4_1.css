@@ -1,0 +1,99 @@
+body{
+    margin: 0px;
+    background: rgb(119, 31, 31);
+}
+body > text{
+    display: none;
+}
+p{
+    margin: 0px;
+}
+#header > img{
+    max-width: 15vw;
+    max-height: auto;
+    position: absolute;
+    right: 42.5vw;
+}
+#main{
+    width: 100vw;
+    height: 77vh;
+    position: absolute;
+    bottom: 0px;
+}
+.block_ower{
+    background: rgb(119, 31, 31);
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+}
+#bo1{
+    top: -20vh;
+}
+#spin_block{
+    background: rgba(199, 205, 21, 0.358);
+    border-radius: 10px;
+    border-style: dashed;
+    border-color: rgb(65, 17, 17);
+    width: 62vw;
+    height: 21vw;
+    position: relative;
+    top: 0px;
+    left:19vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}   
+.cell{
+    text-align: center;
+    vertical-align: middle;
+    width: 20vw;
+    height: 20vw;
+    font-size: 15vw;
+    position: relative;
+    animation-name: spin;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+}
+.cell > p{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.girl_side > img{
+    position: absolute;
+    left: 0px;
+    top: 10vh;
+    max-width: auto;
+    max-height: 90vh;
+}
+#stop_b{
+    position: absolute;
+    bottom: 8vh;
+    left: 35vw;
+    font-size:4.5vw;
+    font-family:Arial;
+    width:30vw;
+    height:10vh;
+    border-width:1px;
+    color:rgb(198, 204, 24);
+    border-color:#d02718;
+    font-weight:bold;
+    border-top-left-radius:18px;
+    border-top-right-radius:18px;
+    border-bottom-left-radius:18px;
+    border-bottom-right-radius:18px;
+    box-shadow: 3px 4px 0px 0px #8a2a21;
+    text-shadow: 0px 1px 0px #810e05;
+    background:linear-gradient(#c62d1f, #f24437);
+}
+#stop_b:hover {
+    background: linear-gradient(#f24437, #c62d1f);
+  }
+
+@keyframes spin {
+    0%   {font-size: 5vw;top:-15vw;}
+    50%  {font-size: 15vw;}
+    100% {font-size: 5vw;top:15vw;}
+  }
