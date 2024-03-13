@@ -29,7 +29,7 @@ p{
 #bo1{
     top: -20vh;
 }
-#spin_block{
+.spin_block{
     background: rgba(199, 205, 21, 0.358);
     border-radius: 10px;
     border-style: dashed;
@@ -92,8 +92,19 @@ p{
     background: linear-gradient(#f24437, #c62d1f);
   }
 
+
+#blur_b{
+    position: absolute;
+    filter: blur(20px);
+    background: rgb(199, 205, 21);
+    height: 26vw;
+    top: -5vh;
+    width: 64vw;
+    left: 18vw;
+}
+
 @keyframes spin {
     0%   {font-size: 5vw;top:-15vw;}
     50%  {font-size: 15vw;}
     100% {font-size: 5vw;top:15vw;}
-  }
+}
