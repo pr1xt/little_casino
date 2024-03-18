@@ -1,3 +1,7 @@
+<?php
+    $balanve_value = 10000;
+    setcookie("balance", $balanve_value, time() + (86400 * 30), "/");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +11,6 @@
     <link rel="stylesheet" href="ex4_1.css?v=<?php echo time(); ?>">
 </head>
 <body>
-    <!-- <?php 
-    require __DIR__ . '/funcs.php';
-    ?> -->
     <div id="main">
         <div class="spin_block">
             <div class="cell" id="cell1">
@@ -32,11 +33,34 @@
     <div class="girl_side">
         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F15%2FCasino-Girl-PNG-Image-HD.png&f=1&nofb=1&ipt=84ad4776013386547b357257589e72ae563ccd671b2a5bf6161bd0067a928b75&ipo=images">
     </div id="stop_block">
-        <input type="submit" onclick="stop_f()" id="stop_b" value="HIT IT!">
+    <input type="submit" onclick="stop_f()" id="stop_b" value="HIT IT!">
+    <div class="info"></div>
+    <div class="info" id="info"> 
+        <div class="info_p">
+            <p class="info_p">account balance:</p>
+            <p class="info_p" id="balance"><?php echo  $_COOKIE["balance"]; ?></p>
+        </div>  
+    </div>
+    <div id="summ_bg1">
+        <p id="loose_text"> YOU LOOSE</p>
+        <form action="" method="get" >
+            <input type="submit" name="again_b1" id="again_b" value="AGAIN!">
+        </form>
+    </div>
+    <div id="summ_bg2">
+        <p id="win_text"> YOU WIN</p>
+        <form action="" method="get" >
+            <input type="submit" name="again_b2" id="again_b" value="AGAIN!">
+        </form>
     </div>
     <script src="ex4_1.js?v=<?php echo time(); ?>"></script>
-    <?php
-    
+    <?php 
+        if(isset($_GET['again_b1'])){
+            $balanve_value = $_COOKIE["balance"] -200;
+            setcookie("balance", $balanve_value, time() + (86400 * 30), "/");}
+        if(isset($_GET['again_b2'])){
+            $balanve_value = $_COOKIE["balance"] +200;
+            setcookie("balance", $balanve_value, time() + (86400 * 30), "/");}
     ?>
 </body>
 </html>
